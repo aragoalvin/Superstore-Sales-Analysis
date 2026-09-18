@@ -7,36 +7,21 @@ ADD datemonth VARCHAR(7);*/
 /*UPDATE superstore_sales
 SET datemonth = FORMAT(Order_Date,'yyyy-MM');*/
 
-SELECT COUNT(Row_ID) as total_order_count
+SELECT 
+	COUNT(Row_ID) as total_order_count,
+	COUNT (DISTINCT Ship_Mode) as shipmode_count,
+	COUNT (DISTINCT Customer_ID) as total_customer,
+	COUNT (DISTINCT Segment) as segment_count,
+	COUNT (DISTINCT Country) as country_count,
+	COUNT (DISTINCT City) as city_count,
+	COUNT (DISTINCT State) as state_count,
+	COUNT (DISTINCT Region) as region_count,
+	COUNT (DISTINCT Product_ID) as product_count
 FROM superstore_sales;
 
 SELECT 
 MIN(Order_Date) as first_order,
 MAX(Order_Date) as last_order
-FROM superstore_sales;
-
-SELECT COUNT (DISTINCT Ship_Mode) as shipmode_count
-FROM superstore_sales;
-
-SELECT COUNT (DISTINCT Customer_ID) as total_customer
-FROM superstore_sales;
-
-SELECT COUNT (DISTINCT Segment) as segment_count
-FROM superstore_sales;
-
-SELECT COUNT (DISTINCT Country) as country_count
-FROM superstore_sales;
-
-SELECT COUNT (DISTINCT City) as city_count
-FROM superstore_sales;
-
-SELECT COUNT (DISTINCT State) as state_count
-FROM superstore_sales;
-
-SELECT COUNT (DISTINCT Region) as region_count
-FROM superstore_sales;
-
-SELECT COUNT (DISTINCT Product_ID) as product_count
 FROM superstore_sales;
 
 /*UPDATE superstore_sales
